@@ -26,12 +26,12 @@ env:
   CONFIG_FILE: P2W_R619AC/P2W_R619AC.config
   DIY_P1_SH: P2W_R619AC/P2W_R619AC-part1.sh
   DIY_P2_SH: P2W_R619AC/P2W_R619AC-part2.sh
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  UPLOAD_BIN_DIR: true
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
-  TZ: Asia/Hong_Kong
+  TZ: Asia/Shanghai
 
 jobs:
   build:
