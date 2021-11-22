@@ -12,7 +12,13 @@
 
 # Extra package
 #git clone https://github.com/kenzok8/small.git package/small
-svn co https://github.com/kenzok8/jell/trunk/luci-app-syncthing package/luci-app-syncthing
+svn co https://github.com/kiddin9/openwrt-packages/trunk/mtk-eip93 package/mtk-eip93
+svn co https://github.com/kiddin9/openwrt-packages/trunk/mtk_apcli package/mtk_apcli
+svn co https://github.com/kiddin9/openwrt-packages/trunk/gowebdav package/gowebdav
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-diskman package/luci-app-diskman
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-gowebdav package/luci-app-gowebdav
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-netspeedtest package/luci-app-netspeedtest
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-syncthing package/luci-app-syncthing
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
