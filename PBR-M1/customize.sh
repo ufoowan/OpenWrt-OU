@@ -16,4 +16,4 @@ sed -i "s/OpenWrt /lc-sub build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packa
 svn export --force https://github.com/lc-sub/OpenWrt-OU/trunk/PBR-M1/dts target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
 svn export --force https://github.com/lc-sub/OpenWrt-OU/trunk/PBR-M1/leds target/linux/ramips/mt7621/base-files/etc/board.d/01_leds
 svn export --force https://github.com/lc-sub/OpenWrt-OU/trunk/PBR-M1/network target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-svn export --force https://github.com/lc-sub/OpenWrt-TE/trunk/PBR-M1/mk target/linux/ramips/image/mt7621.mk
+svn export --force https://github.com/lc-sub/OpenWrt-OU/trunk/PBR-M1/mk target/linux/ramips/image/mt7621.mk
