@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.9/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.5/g' package/base-files/files/bin/config_generate
 
 # Modify hostname
 sed -i "s/hostname='OpenWrt'/hostname='PBR-M1'/g" package/base-files/files/bin/config_generate
