@@ -19,6 +19,18 @@ sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwal
 sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/server/*.htm
 popd
 
+# OpenClash
+mkdir package/openclash
+pushd package/openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+sed -i 's/services/vpn/g' luci-app-openclash/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' luci-app-openclash/luasrc/model/cbi/openclash/*.lua
+sed -i 's/services/vpn/g' luci-app-openclash/luasrc/view/openclash/*.htm
+popd
+pushd package/openclash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
+
 # Extra package
 rm -rf feeds/packages/utils/syncthing
 rm -rf feeds/luci/applications/luci-app-diskman
@@ -45,7 +57,12 @@ svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/themes/luci-th
 popd
 
 # Modify Menu
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
+sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/*.htm
 sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/samba4.lua
+sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
+sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
 # Modify Makefile
 find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
