@@ -1,31 +1,56 @@
 #!/bin/bash
 #
+# SSRP
+mkdir package/helloworld
+pushd package/helloworld
+git clone --depth=1 https://github.com/fw876/helloworld.git
+sed -i 's/\"services\"/\"vpn\"/g' helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
+sed -i 's/\/services\//\/vpn\//g' helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
+sed -i 's/\/services\//\/vpn\//g' helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
+popd
+
 # Passwall
 mkdir package/passwall
 pushd package/passwall
 #git clone --depth=1 https://github.com/kenzok8/small.git
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall.git
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall openwrt-passwall/luci-app-passwall
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/api/*.lua
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/client/*.lua
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/server/*.lua
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/app_update/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/global/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/haproxy/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/log/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/node_list/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/rule/*.htm
-sed -i 's/services/vpn/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/server/*.htm
+sed -i 's/\"services\"/\"vpn\"/g' openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' openwrt-passwall/luci-app-passwall/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*/*.lua
+sed -i 's/\/services\//\/vpn\//g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*.lua
+sed -i 's/\/services\//\/vpn\//g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' openwrt-passwall/luci-app-passwall/luasrc/model/cbi/passwall/*/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/*/*.htm
+sed -i 's/\/services\//\/vpn\//g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/*/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' openwrt-passwall/luci-app-passwall/luasrc/view/passwall/*/*.htm
 popd
 
 # OpenClash
 mkdir package/openclash
 pushd package/openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-sed -i 's/services/vpn/g' luci-app-openclash/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' luci-app-openclash/luasrc/model/cbi/openclash/*.lua
-sed -i 's/services/vpn/g' luci-app-openclash/luasrc/view/openclash/*.htm
+sed -i 's/\"services\"/\"vpn\"/g' luci-app-openclash/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' luci-app-openclash/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' luci-app-openclash/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' luci-app-openclash/luasrc/model/cbi/openclash/*.lua
+sed -i 's/\/services\//\/vpn\//g' luci-app-openclash/luasrc/model/cbi/openclash/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' luci-app-openclash/luasrc/model/cbi/openclash/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' luci-app-openclash/luasrc/view/openclash/*.htm
+sed -i 's/\/services\//\/vpn\//g' luci-app-openclash/luasrc/view/openclash/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' luci-app-openclash/luasrc/view/openclash/*.htm
+sed -i 's/\"services\"/\"vpn\"/g' luci-app-openclash/luasrc/*.lua
+sed -i 's/\/services\//\/vpn\//g' luci-app-openclash/luasrc/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' luci-app-openclash/luasrc/*.lua
 popd
 pushd package/openclash/luci-app-openclash/tools/po2lmo
 make && sudo make install
@@ -57,12 +82,51 @@ svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/themes/luci-th
 popd
 
 # Modify Menu
-sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/aria2.lua
-sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/*.htm
-sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/samba4.lua
-sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
-sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/*.lua
+sed -i 's/\/services\//\/nas\//g' feeds/luci/applications/luci-app-aria2/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[nas\]/g' feeds/luci/applications/luci-app-aria2/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-aria2/luasrc/model/cbi/*.lua
+sed -i 's/\/services\//\/nas\//g' feeds/luci/applications/luci-app-aria2/luasrc/model/cbi/*.lua
+sed -i 's/\[services\]/\[nas\]/g' feeds/luci/applications/luci-app-aria2/luasrc/model/cbi/*.lua
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/*.htm
+sed -i 's/\/services\//\/nas\//g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/*.htm
+sed -i 's/\[services\]/\[nas\]/g' feeds/luci/applications/luci-app-aria2/luasrc/view/aria2/*.htm
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/*.lua
+sed -i 's/\/services\//\/nas\//g' feeds/luci/applications/luci-app-samba4/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[nas\]/g' feeds/luci/applications/luci-app-samba4/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"nas\"/g' feeds/luci/applications/luci-app-samba4/luasrc/model/cbi/*.lua
+sed -i 's/\/services\//\/nas\//g' feeds/luci/applications/luci-app-samba4/luasrc/model/cbi/*.lua
+sed -i 's/\[services\]/\[nas\]/g' feeds/luci/applications/luci-app-samba4/luasrc/model/cbi/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frpc/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frpc/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frpc/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frpc/luasrc/model/cbi/frp/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frpc/luasrc/model/cbi/frp/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frpc/luasrc/model/cbi/frp/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frpc/luasrc/view/frp/*.htm
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frpc/luasrc/view/frp/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frpc/luasrc/view/frp/*.htm
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frps/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frps/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frps/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frps/luasrc/model/cbi/frps/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frps/luasrc/model/cbi/frps/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frps/luasrc/model/cbi/frps/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-frps/luasrc/view/frps/*.htm
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-frps/luasrc/view/frps/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-frps/luasrc/view/frps/*.htm
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
+sed -i 's/\"services\"/\"vpn\"/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
+sed -i 's/\/services\//\/vpn\//g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
+sed -i 's/\[services\]/\[vpn\]/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
 # Modify Makefile
 find package/lc-sub -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
