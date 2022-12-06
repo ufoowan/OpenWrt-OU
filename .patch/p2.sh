@@ -3,26 +3,26 @@
 # GFW
 mkdir package/gfw
 pushd package/gfw
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria
-svn co https://github.com/fw876/helloworld/trunk/naiveproxy
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocksr-libev
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/simple-obfs
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-core
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin
-svn co https://github.com/fw876/helloworld/trunk/v2raya
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/brook
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/hysteria
+svn co https://github.com/fw876/helloworld/tree/master/naiveproxy
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/shadowsocks-rust
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/shadowsocksr-libev
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/simple-obfs
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/ssocks
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/trojan-go
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/trojan-plus
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/trojan
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/v2ray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/v2ray-geodata
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/v2ray-plugin
+svn co https://github.com/fw876/helloworld/tree/master/v2raya
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/xray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/xray-plugin
 # SSRP
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
+svn co https://github.com/fw876/helloworld/tree/master/luci-app-ssr-plus
 sed -i "s/'services'/'vpn'/g" luci-app-ssr-plus/luasrc/controller/*.lua
 sed -i 's/\"services\"/\"vpn\"/g' luci-app-ssr-plus/luasrc/controller/*.lua
 sed -i 's/\/services\//\/vpn\//g' luci-app-ssr-plus/luasrc/controller/*.lua
@@ -51,7 +51,7 @@ sed -i 's/\"services\"/\"vpn\"/g' luci-app-vssr/luasrc/view/vssr/*.htm
 sed -i 's/\/services\//\/vpn\//g' luci-app-vssr/luasrc/view/vssr/*.htm
 sed -i 's/\[services\]/\[vpn\]/g' luci-app-vssr/luasrc/view/vssr/*.htm
 # Passwall
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall2/tree/main/luci-app-passwall2/
 sed -i "s/'services'/'vpn'/g" luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/\"services\"/\"vpn\"/g' luci-app-passwall/luasrc/controller/*.lua
 sed -i 's/\/services\//\/vpn\//g' luci-app-passwall/luasrc/controller/*.lua
@@ -69,7 +69,7 @@ sed -i 's/\"services\"/\"vpn\"/g' luci-app-passwall/luasrc/view/passwall/*/*.htm
 sed -i 's/\/services\//\/vpn\//g' luci-app-passwall/luasrc/view/passwall/*/*.htm
 sed -i 's/\[services\]/\[vpn\]/g' luci-app-passwall/luasrc/view/passwall/*/*.htm
 # OpenClash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash
 sed -i "s/'services'/'vpn'/g" luci-app-openclash/luasrc/controller/*.lua
 sed -i 's/\"services\"/\"vpn\"/g' luci-app-openclash/luasrc/controller/*.lua
 sed -i 's/\/services\//\/vpn\//g' luci-app-openclash/luasrc/controller/*.lua
